@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Friends Loop</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+  <!-- Local StyleSheet -->
+  <link href="./style.css" rel="stylesheet" />
+
+  <!--JS Files-->
+  
+
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+
+  <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; 
+    sourceWidth:1280; sourceHeight:960; 
+    displayWidth: 1280; displayHeight: 960; 
+    debugUIEnabled: false;" gesture-detector create-buttons>
+
+    <!-- Camera -->
+    <a-entity camera></a-entity>
+
+    <a-assets>
+      <a-asset-item id="Mridul-info" src="assets/info1.glb"></a-asset-item>
+      <a-asset-item id="Lakshay-info" src="assets/info3.glb"></a-asset-item>
+      <a-asset-item id="Somesh-info" src="assets/info2.glb"></a-asset-item>
+    </a-assets>
+
+    <!--Pattern Marker-->
+    <a-marker id="Mridul" type="pattern" url="assets/pattern-Mridul.patt" cursor="rayOrigin: mouse">
+      
+      <a-entity id="Mridul-info" position="-1 0 0" scale="0.05 0.05 0.05" 
+        gltf-model="#Mridul-info"
+        gesture-handler>
+      </a-entity>
+
+      <!--Lakshay-->
+      
+  
+      <!--Pattern Marker-->
+      <a-marker id="Lakshay" type="pattern" url="assets/pattern-lakshay.patt" cursor="rayOrigin: mouse">
+        
+        <a-entity id="Lakshay-info" position="-1 0 0" scale="0.05 0.05 0.05" 
+          gltf-model="#Lakshay-info"
+          gesture-handler>
+        </a-entity>
+       
+        <!--Somesh-->
+        
+    
+        <!--Pattern Marker-->
+        <a-marker id="Somesh" type="pattern" url="assets/pattern-somesh.patt" cursor="rayOrigin: mouse">
+          
+          <a-entity id="Somesh" position="-1 0 0" scale="0.05 0.05 0.05" 
+            gltf-model="#Somesh-info"
+            gesture-handler>
+          </a-entity>
+
+     
+      
+
+    </a-marker>
+
+
+  </a-scene>
+
+  <!-- Button Main Div -->
+  <div id="button-div"></div>
+
+</body>
+
+</html>
